@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install browsers
+        run: npx playwright install  
+
       - name: Run Playwright Full Test Suite on Shard ${{ matrix.shard }}
         run: |
           npx playwright test --workers=3  # Running the full test suite with 3 workers in parallel
